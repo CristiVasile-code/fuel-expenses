@@ -3,31 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Benzina</title>
-
+    <title>Fuel Expenses</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-      <form action="" method="post" name="contact-form">
-	<label for="data">Data :</label>
-	<input type="date" placeholder="data" name="data" ><br>
-	<label for="suma">Suma</label>
-	<input type="text" placeholder="Suma : " name="suma" ><br>	
-	<label for="cantitatea">Cantitatea : </label>
-	<input type="text" placeholder="cantitatea" name="cantitatea" ><br>
-	<input type="submit" value="Submit" id="submit">	
-      </form>
-<script>
-	const scriptURL='https://script.google.com/macros/s/AKfycbyOUZmYbZ_BRXPveBJ1NaWqsI-8_-otn7tmzqJYh--5Ll_WuPLh-9iwJCg_ZDwB5NQB/exec'
-	const form = document.forms['contact-form'];
-
-	form.addEventListener('submit', e => {
-	e.preventDefault();
-	fetch(scriptURL, {method:'POST', body: new FormData(form)})
-	.then(response => alert("submited"))
-	.then(() => {window.location.reload(); })
-	.catch(error => console.error('Error!', error.message))
-})
-
-</script>
+    <div class="container">
+        <div id="title">Fuel Expenses</div>
+        <form name="contact-form">
+	        <input type="date" placeholder="data" name="data" >
+	        <input type="text" placeholder="Suma : " name="suma" autocomplete="off">	
+	        <input type="text" placeholder="Cantitatea : " name="cantitatea" autocomplete="off">
+	        <input type="submit" value="Submit" id="submit">	
+        </form>
+    </div>
+<script src="index.js"></script>
 </body>
 </html>
